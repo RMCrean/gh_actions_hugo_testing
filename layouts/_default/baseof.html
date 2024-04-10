@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        {{- partial "navbar.html" . -}}
+        {{- partial "breadcrumbs.html" . -}}
+        {{- block "header" . }}{{- end }}
+        <main>
+          <div class="container" id="content">
+                {{- block "main" . }}{{- end }}
+          </div>
+        </main>
+        <br>
+        <br>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

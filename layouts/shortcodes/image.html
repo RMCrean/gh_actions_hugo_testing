@@ -1,0 +1,10 @@
+<!-- Sets out a basic image addition.  -->
+
+{{- $image := .Params.image -}}
+{{- $altText := .Params.altText -}}
+{{- $legend := .Params.legend -}}
+
+<div class="image-container">
+    <img src="{{ $image }}" alt="{{ $altText }}" class="image">
+    <div class="legend">{{ $legend }}</div>
+</div>

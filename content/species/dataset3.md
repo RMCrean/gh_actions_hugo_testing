@@ -10,5 +10,3 @@ tags:
 ---
 
 Using plotly shortcode below:
-
-{{< plotly >}}

@@ -1,0 +1,18 @@
+<div class="container">
+    <div id="jbrowse-container"></div>
+</div>
+
+<script>
+    // Create a new JBrowse instance
+    const jbrowse = new JBrowse({
+        container: document.getElementById('jbrowse-container'),
+        // Add your JBrowse configuration options here
+        // For example:
+        // tracks: [{ type: 'FeatureTrack', trackId: 'myTrack', ... }]
+    });
+
+    // Load the JBrowse data
+    jbrowse.load().then(() => {
+        // JBrowse is loaded and ready to use
+    });
+</script>

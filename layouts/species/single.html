@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+<section id="main">
+    <div>
+        <article id="content">
+            {{ .Content }}
+        </article>
+    </div>
+
+    <!-- datatable implementionan below-->
+    {{if .Params.info_table_path }}
+
+        <div class="col-lg">
+            <div class="row">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-hover table-bordered" width="100%">
+
+                <thead class="table-light">
+                    <tr>
+                    <th scope="col">Species</th>
+                    <th scope="col">Found in Europe</th>
+                    <th scope="col">Scientific Name</th>
+                    <th scrope="col">Wikipedia link</th>
+                    </tr>
+                </thead>
+
+                <tbody class="table-responsive">
+                {{ $specieslist := index .Site.Data .Params.info_table_path }}
+                {{ range $index, $specieslist.species }}
+                    <tr>
+                    <td> {{ .name }} </td>
+                    <td> {{ .foundInEurope }} </td>
+                    <td> {{ .scientificName }} </td>
+                    <td> <a href="{{ .wikipedia }}" target="_blank"> Wikipedia </a> </td>
+                    </tr>
+                {{ end }}
+                </tbody>
+                
+                </table>
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+    {{ end }}
+
+
+</section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+</script>
+
+
+{{ end }}

@@ -1,0 +1,106 @@
+{{ define "main" }}
+
+<!-- Find all unique tags in the child pages -->
+{{ $tags := slice }}
+{{ range .Page.Pages }}
+    {{ range .Params.tags }}
+
+        {{ $tags = $tags | append . }}
+    {{ end }}
+{{ end }}
+{{ $uniq_tags := $tags | uniq }}
+
+
+
+<div class="container">
+    <!-- Search form -->
+    <div class="mb-3">
+        <form id="searchForm">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search by tags" id="searchInput">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="row"> 
+
+            <!-- Species -->
+            {{ range .Paginator.Pages }}
+                <div id="subpages" class="col-md-4"> 
+                    <div class="card border-primary mb-3">
+                        <img src="image1.jpg" class="card-img-top" alt="Image 1">
+                        <dimd-4v class="card-body">
+                            <h5 class="card-title">{{ .Title }}</h5>
+                            <p class="card-text">{{ .Summary }}</p>
+                            <a href="{{ .Permalink }}" class="btn btn-primary">Go to {{ .Title }}</a>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+    
+        <div class="col-md-4 ">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Filter the results</h5>
+                        {{ range $index, $tag := $uniq_tags }}
+                                <!-- <button class="btn btn-primary m-2" type="button">{{ $tag }}</button> -->
+                                <input type="checkbox" class="btn-check" id="{{ $index }}" autocomplete="off">
+                                <label class="btn btn-outline-primary m-2" for="{{ $index }}">{{ $tag }}</label>
+                        {{ end }}
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    {{partial "pagination.html" .}} 
+</div>
+ 
+
+
+<script>
+    // Function to filter the content based on selected tags
+    function filterContent() {
+        // Get all the selected tags
+        var selectedTags = [];
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(function(checkbox) {
+            selectedTags.push(checkbox.id);
+        });
+
+        // Hide all the species cards
+        var speciesCards = document.querySelectorAll('.col-md-4');
+        speciesCards.forEach(function(card) {
+            card.style.display = 'none';
+        });
+
+        // Show the species cards that have at least one selected tag
+        speciesCards.forEach(function(card) {
+            var tags = card.getAttribute('data-tags').split(',');
+            var showCard = tags.some(tag => selectedTags.includes(tag));
+            if (showCard) {
+                card.style.display = 'block';
+            }
+        });
+    }
+
+    // Add event listener to the tag checkboxes
+    var tagCheckboxes = document.querySelectorAll('.btn-check');
+    tagCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            filterContent();
+        });
+    });
+</script>
+
+
+{{ end }}

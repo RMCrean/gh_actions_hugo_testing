@@ -1,53 +1,6 @@
-# Hugo output directory
 /public/
 /node_modules/
+/tmp/
 
-# Hugo cache and temporary files
-/resources/
-/cache/
-/.sass-cache/
-*.bak
-
-# Ignore generated HTML files
-*.html
-
-# Ignore generated CSS files
-*.css
-
-# Ignore generated JavaScript files
-*.js
-
-# Ignore generated image files
-*.jpg
-*.jpeg
-*.png
-*.gif
-
-# Ignore Hugo configuration files
-/config.toml
-/config.yaml
-/config.json
-
-# Ignore Hugo module files
-/go.mod
-/go.sum
-
-# Ignore Hugo server files
-/hugo
-/hugo.exe
-
-# Ignore Hugo log files
-/log/
-
-# Ignore Hugo public directory for Netlify deployments
-/netlify.toml
-/netlify/
-
-# Ignore Hugo theme files
-/themes/
-
-# Ignore Hugo backup files
-*.bak
-*.swp
-*.swo
+# Ignore backup files
 *.DS_Store
