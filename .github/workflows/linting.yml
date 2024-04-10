@@ -9,6 +9,7 @@ jobs:
         with:
             sparse-checkout: |
                 content
+                .github/markdownlintconfig.yml
 
       - uses: actions/setup-node@v4
         with:
