@@ -15,11 +15,6 @@ jobs:
     - name: Build Hugo
       run: hugo --minify
 
-    - uses: actions/cache@v2
-      with:
-        path: tmp/.htmltest
-        key: ${{ runner.os }}-htmltest
-
     - name: HTML Test
       run: |
         curl https://htmltest.wjdp.uk | bash
