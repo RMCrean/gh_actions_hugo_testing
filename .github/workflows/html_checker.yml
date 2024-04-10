@@ -15,11 +15,16 @@ jobs:
     - name: Build Hugo
       run: hugo --minify
 
+    - uses: actions/cache@v2
+      with:
+        path: tmp/.htmltest
+        key: ${{ runner.os }}-htmltest
+
     - name: HTML Test
       run: |
         curl https://htmltest.wjdp.uk | bash
         bin/htmltest --config ${GITHUB_WORKSPACE}/.github/htmltest-config.yml
-    
+
     - name: Archive htmltest results
       uses: actions/upload-artifact@v3
       with:
