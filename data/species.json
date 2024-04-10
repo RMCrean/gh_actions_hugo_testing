@@ -1,0 +1,130 @@
+{
+    "species": [
+        {
+            "name": "Lion",
+            "foundInEurope": false,
+            "scientificName": "Panthera leo",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Lion"
+        },
+        {
+            "name": "Brown Bear",
+            "foundInEurope": true,
+            "scientificName": "Ursus arctos",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Brown_bear"
+        },
+        {
+            "name": "Red Fox",
+            "foundInEurope": true,
+            "scientificName": "Vulpes vulpes",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Red_fox"
+        },
+        {
+            "name": "European Robin",
+            "foundInEurope": true,
+            "scientificName": "Erithacus rubecula",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_robin"
+        },
+        {
+            "name": "Elephant",
+            "foundInEurope": false,
+            "scientificName": "Loxodonta africana",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/African_elephant"
+        },
+        {
+            "name": "Polar Bear",
+            "foundInEurope": false,
+            "scientificName": "Ursus maritimus",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Polar_bear"
+        },
+        {
+            "name": "Gray Wolf",
+            "foundInEurope": true,
+            "scientificName": "Canis lupus",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Gray_wolf"
+        },
+        {
+            "name": "Bison",
+            "foundInEurope": false,
+            "scientificName": "Bison bison",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/American_bison"
+        },
+        {
+            "name": "European Hedgehog",
+            "foundInEurope": true,
+            "scientificName": "Erinaceus europaeus",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_hedgehog"
+        },
+        {
+            "name": "Red Deer",
+            "foundInEurope": true,
+            "scientificName": "Cervus elaphus",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Red_deer"
+        },
+        {
+            "name": "European Badger",
+            "foundInEurope": true,
+            "scientificName": "Meles meles",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_badger"
+        },
+        {
+            "name": "Moose",
+            "foundInEurope": true,
+            "scientificName": "Alces alces",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Moose"
+        },
+        {
+            "name": "Eurasian Lynx",
+            "foundInEurope": true,
+            "scientificName": "Lynx lynx",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/Eurasian_lynx"
+        },
+        {
+            "name": "European Otter",
+            "foundInEurope": true,
+            "scientificName": "Lutra lutra",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_otter"
+        },
+        {
+            "name": "European Wildcat",
+            "foundInEurope": true,
+            "scientificName": "Felis silvestris",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_wildcat"
+        },
+        {
+            "name": "European Mink",
+            "foundInEurope": true,
+            "scientificName": "Mustela lutreola",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_mink"
+        },
+        {
+            "name": "European Polecat",
+            "foundInEurope": true,
+            "scientificName": "Mustela putorius",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_polecat"
+        },
+        {
+            "name": "European Pine Marten",
+            "foundInEurope": true,
+            "scientificName": "Martes martes",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_pine_marten"
+        },
+        {
+            "name": "European Beaver",
+            "foundInEurope": true,
+            "scientificName": "Castor fiber",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_beaver"
+        },
+        {
+            "name": "European Rabbit",
+            "foundInEurope": true,
+            "scientificName": "Oryctolagus cuniculus",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_rabbit"
+        },
+        {
+            "name": "European Hare",
+            "foundInEurope": true,
+            "scientificName": "Lepus europaeus",
+            "wikipediaLink": "https://en.wikipedia.org/wiki/European_hare"
+        }
+    ]
+}

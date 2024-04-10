@@ -1,0 +1,35 @@
+baseURL: "example.com"
+title: "Testing GitHub Actions and Hugo"
+buildFuture: true
+
+paginate: 1
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+
+menus:
+  main:
+  - name: Home
+    pageRef: /
+    weight: 1
+  - name: About
+    pageRef: /about
+    weight: 2
+  - name: Species
+    pageRef: /species
+    weight: 3
+  - name: Upload Data
+    pageRef: /upload_data
+    weight: 4
+  - name: Contact
+    pageRef: /contact
+    weight: 5
+
+  # species subpages here... 
+  - name: Herring
+    pageRef: /species/herring_page
+    parent: Species
+    weight: 1
