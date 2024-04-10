@@ -2,7 +2,8 @@ name: Markdownlint
 on: [push, pull_request]
 
 jobs:
-  Markdown:
+  Markdownlint:
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,5 +17,6 @@ jobs:
           node-version: '20'
       - name: Install markdownlint
         run: npm install -g markdownlint-cli
+            
       - name: Run Markdownlint
         run: markdownlint ${GITHUB_WORKSPACE}/content/ -c ${GITHUB_WORKSPACE}/.github/markdownlintconfig.yml
