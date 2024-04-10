@@ -42,4 +42,3 @@ The genome dataset has numerous applications in different fields, including:
 ### Conclusion
 
 The genome dataset provides a wealth of information that can revolutionize our understanding of biology and drive advancements in various fields. Its analysis and interpretation can lead to groundbreaking discoveries and contribute to the development of innovative solutions.
-
