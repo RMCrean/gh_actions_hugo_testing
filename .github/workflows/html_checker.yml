@@ -1,5 +1,5 @@
 name: HTMLChecker
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   html_checker:
@@ -19,7 +19,7 @@ jobs:
       continue-on-error: true
       run: |
         curl https://htmltest.wjdp.uk | bash
-        bin/htmltest 
+        bin/htmltest --conf ${{ github.workspace }}/.github/.htmltest.yml
 
     - name: Archive htmltest results
       uses: actions/upload-artifact@v3
