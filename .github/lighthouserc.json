@@ -11,8 +11,8 @@
     },
     "assert": {
         "assertions": {
-            "categories:performance": ["warn", {"minScore": 1.0}],
-            "categories:accessibility": ["warn", {"minScore": 1.0}]
+            "categories:performance": ["error", {"minScore": 1.0}],
+            "categories:accessibility": ["error", {"minScore": 1.0}]
         }
     }
 }
