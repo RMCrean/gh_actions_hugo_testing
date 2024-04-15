@@ -29,9 +29,9 @@ jobs:
       matrix:
         include: 
           - language: "javascript"
-            build-mode: "default"
+            build-mode: "autobuild"
           - language: "python"
-            build-mode: "default"
+            build-mode: "autobuild"
 
     steps:
     - name: Checkout repository
