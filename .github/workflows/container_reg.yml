@@ -36,13 +36,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: |
-            rmcrean/gh_actions_hugo_testing
+          images: ghcr.io/${{ env.REPO_NAME }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
