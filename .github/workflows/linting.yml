@@ -6,15 +6,18 @@ jobs:
     continue-on-error: true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-            sparse-checkout: |
-                content
-                .github/markdownlintconfig.yml
+          sparse-checkout: |
+            content
+            .github/markdownlintconfig.yml
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+
       - name: Install markdownlint
         run: npm install -g markdownlint-cli
             

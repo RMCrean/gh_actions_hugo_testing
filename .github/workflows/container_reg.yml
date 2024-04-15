@@ -1,12 +1,10 @@
-# Build and publish image to GitHub (ghcr.io)
-name: Publish Docker Image
+name: Publish docker image
 on:
   push:
     branches:
       - main
       # TODO - only if has a release tag
 jobs:
-
   build:
     runs-on: ubuntu-latest
     permissions:
