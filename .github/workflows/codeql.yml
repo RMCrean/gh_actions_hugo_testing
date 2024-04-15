@@ -27,7 +27,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include: ["javascript-typescript", "python"]
+        include: 
+          - language: "javascript"
+            build-mode: "default"
+          - language: "python"
+            build-mode: "default"
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4

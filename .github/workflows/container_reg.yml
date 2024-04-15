@@ -1,6 +1,6 @@
 name: Publish docker image
 on:
-  push:
+  pull_request:
     branches:
       - main
       # TODO - only if has a release tag
