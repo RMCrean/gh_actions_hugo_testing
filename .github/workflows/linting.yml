@@ -15,9 +15,8 @@ jobs:
       
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
-        continue-on-error: false
         with:
-          config: ${{ github.workspace }}/.github/markdownlintconfig.yml
+          config: .github/markdownlintconfig.yml
           globs: 'content/**/*.md'
           fix: true
           
