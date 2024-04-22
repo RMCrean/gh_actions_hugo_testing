@@ -1,5 +1,5 @@
 name: Markdownlint
-on: [pull_request]
+on: [push]
 
 jobs:
   Markdownlint:
@@ -12,14 +12,12 @@ jobs:
           sparse-checkout: |
             content
             .github/markdownlintconfig.yml
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install markdownlint
-        run: npm install -g markdownlint-cli
-            
+      
       - name: Run Markdownlint
-        run: markdownlint ${{ github.workspace }}/content/ -c ${{ github.workspace }}/.github/markdownlintconfig.yml
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        continue-on-error: false
+        with:
+          config: ${{ github.workspace }}/.github/markdownlintconfig.yml
+          globs: 'content/**/*.md'
+          fix: true
+          
