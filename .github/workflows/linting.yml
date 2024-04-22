@@ -11,12 +11,12 @@ jobs:
         with:
           sparse-checkout: |
             content
-            .github/.markdownlint-cli2.yaml
+            .github
       
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
-          config: .github/.markdownlint-cli2.yaml
+          config: .github/.markdownlint-cli2.yaml 
           globs: 'content/**/*.md'
           fix: true
           
