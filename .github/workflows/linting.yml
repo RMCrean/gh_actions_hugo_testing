@@ -8,17 +8,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            content
-            ".github"
-      
 
-      - name: list files 
-        run: ls -la 
-
-      - name: list files in github folder
-        run: ls -la .github
+    
+      - name: List files recursively
+        run: ls -laR
 
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
