@@ -17,10 +17,13 @@ jobs:
       - name: list files 
         run: ls -la 
 
+      - name: list files in github folder
+        run: ls -la .github
+
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
-          config: ".markdownlint-cli2.yaml" 
+          config: ".github/.markdownlint-cli2.yaml" 
           globs: "content/**/*.md"
           fix: true
           
