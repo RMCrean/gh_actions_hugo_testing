@@ -11,7 +11,7 @@ jobs:
         with:
           sparse-checkout: |
             content
-            ".github/.markdownlint-cli2.yaml"
+            ".github"
       
 
       - name: list files 
