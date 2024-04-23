@@ -13,6 +13,10 @@ jobs:
             content
             .github
       
+
+      - name: list files 
+        run: ls -la 
+
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
