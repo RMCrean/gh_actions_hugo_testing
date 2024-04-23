@@ -11,7 +11,7 @@ jobs:
         with:
           sparse-checkout: |
             content
-            .github
+            ".github/.markdownlint-cli2.yaml"
       
 
       - name: list files 
@@ -20,7 +20,7 @@ jobs:
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
-          config: ${{ github.workspace }}/.github/.markdownlint-cli2.yaml 
-          globs: 'content/**/*.md'
+          config: ".markdownlint-cli2.yaml" 
+          globs: "content/**/*.md"
           fix: true
           
