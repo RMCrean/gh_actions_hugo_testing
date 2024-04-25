@@ -1,5 +1,11 @@
 name: Markdownlint
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   Markdownlint:
@@ -8,6 +14,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            content
+            .github/.markdownlint-cli2.jsonc
 
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v16
