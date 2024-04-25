@@ -1,5 +1,5 @@
 name: Lighthouse
-on: [pull_request]
+on: [push]
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -10,10 +10,10 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.119.0'
+          hugo-version: '0.124.1'
         
       - name: Build Hugo
-        run: hugo --minify
+        run: hugo --minify 
 
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v11
