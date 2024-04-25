@@ -1,34 +1,22 @@
-name: Publish docker image
+name: Build and push image to GitHub Container Registry
 on:
   push:
-    branches:
-      - fakebranch
-  pull_request:
-    branches:
-      - main
-      # TODO - only if has a release tag
+    tags:
+      - 'v*.*.*' # i.e. has to have a release tag to run 
 jobs:
   push-to-container-registry:
-    if: github.repository == 'RMCrean/gh_actions_hugo_testing' 
+    if: github.repository == 'RMCrean/gh_actions_hugo_testing'  
     name: Build and push Docker image to GitHub Container Registry
+
     runs-on: ubuntu-latest
-    
     permissions:
       contents: read
       packages: write
-    
-    # Cancel earlier job if there is a new one for the same branch/release
-    concurrency:
-      group: ${{ github.ref }}-docker-build
-      cancel-in-progress: true
-    
+        
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Convert repository name to lowercase
-        run: echo "REPO_NAME=$(echo ${{ github.repository }} | awk '{print tolower($0)}')" >> $GITHUB_ENV
-            
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -36,23 +24,25 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Docker meta
+      - name: Create Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ env.REPO_NAME }}
+          images: ghcr.io/RMCrean/gh_actions_hugo_testing
+          flavor: |
+            latest=auto
           tags: |
             type=ref,event=branch
-            type=ref,event=pr
+            type=ref,event=branch
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
         
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
-          # don't push during pull request, only build
+
           push: ${{ github.event_name != 'pull_request' }}
+          context: .
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
