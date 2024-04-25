@@ -2,6 +2,5 @@
   "config": {
     "line-length": false,
     "no-inline-html": false
-  },
-  "fix": true
+  }
 }
