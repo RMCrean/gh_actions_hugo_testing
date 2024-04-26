@@ -27,12 +27,6 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install chrome
-        run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt-get update
-          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
-
       - name: Run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.13.x

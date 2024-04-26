@@ -1,5 +1,5 @@
 name: Lighthouse
-on: [pull_request]
+on: [push]
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -19,7 +19,6 @@ jobs:
         uses: treosh/lighthouse-ci-action@v11
         env:
           LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_TOKEN }}
-          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.event.pull_request.head.sha || github.sha }}
         with:
           configPath: ${{ github.workspace }}/.github/lighthouserc.json
           temporaryPublicStorage: true
